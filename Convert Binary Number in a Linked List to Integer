@@ -29,10 +29,7 @@ Number of nodes will not exceed 30.
 Each node's value is either 0 or 1.
 
 
-
-
-
-
+================================================================
 SOLUTION:-
 # Definition for singly-linked list.
 # class ListNode:
@@ -51,3 +48,14 @@ class Solution:
         num = ''.join(map(str,ls))
         res = int(num,2)
         return res
+
+############# ALTERNATE SOLUTION ###################
+def getDecimalValue(self, head: ListNode) -> int:
+        res = 0
+        if head.next is None:
+            return head.val
+        while head:
+            res = (res<<1 ) + head.val
+            head = head.next
+        return res
+----------------------------------------------------
